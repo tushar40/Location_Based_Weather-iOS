@@ -32,6 +32,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = .white
         notificationCenter.addObserver(self, selector: #selector(gotCurrentLocation(_:)), name: .currentLocationNotification, object: locationService.self)
         locationService.startService()
         loadMap()

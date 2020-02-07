@@ -53,9 +53,10 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barTintColor = .systemIndigo
         registerCells()
         coordinates = placemark.coordinate
-        
+        dailyWeatherTableView.tableFooterView = UIView()
         weatherApi.forecast(coordinates: coordinates) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -70,6 +71,12 @@ class WeatherViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = .white
+        super.viewWillDisappear(animated)
+    }
+    
     
     //MARK:- Custom Methods
     
@@ -111,6 +118,7 @@ class WeatherViewController: UIViewController {
 //MARK:- UICollectionView Delegate Methods
 
 extension WeatherViewController: UICollectionViewDelegate {
+    
 }
 
 //MARK:- UICollectionView Data Source Methods

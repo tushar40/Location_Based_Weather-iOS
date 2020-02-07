@@ -93,8 +93,12 @@ extension LocationSearchTableViewController: UISearchResultsUpdating {
         request.region = mapview.region
         let search = MKLocalSearch(request: request)
         search.start { [weak self] response, error in
-            guard let response = response, let self = self else { return }
-            self.mapItems = response.mapItems
+            guard let self = self else { return }
+            if let response = response {
+                self.mapItems = response.mapItems
+            } else {
+                self.mapItems = []
+            }
             self.tableView.reloadData()
         }
     }
