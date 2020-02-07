@@ -14,6 +14,7 @@ import MapKit.MKPlacemark
 class ViewController: UIViewController {
     
     //MARK:- Property Variables
+    
     private var mapView: GMSMapView!
     private var resultsViewController: GMSAutocompleteResultsViewController?
     private var searchController: UISearchController?
@@ -79,11 +80,11 @@ class ViewController: UIViewController {
         view.addSubview(mapView)
         addAddressLabel()
         
-        moveCameraToLocation(location: currentLocation)
+        moveCameraToLocation(location: currentLocation.coordinate)
     }
     
-    private func moveCameraToLocation(location: CLLocation) {
-        mapView.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: zoomLevel)
+    private func moveCameraToLocation(location: CLLocationCoordinate2D) {
+        mapView.camera = GMSCameraPosition.camera(withTarget: location, zoom: zoomLevel)
         mapView.animate(to: mapView.camera)
     }
     
@@ -107,6 +108,7 @@ class ViewController: UIViewController {
     //MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier, let destination = segue.destination as? WeatherViewController {
+            
             destination.placemark = currentPlacemark
         }
     }
@@ -129,7 +131,7 @@ extension ViewController: GMSMapViewDelegate {
     }
 }
 
-//MARK :- HandleMapSearch Delegate Methdods
+//MARK:- HandleMapSearch Delegate Methdods
 
 extension ViewController: HandleMapSearchDelegate {
     func dropPinZoomIn(placeMark: MKPlacemark) {
@@ -141,7 +143,6 @@ extension ViewController: HandleMapSearchDelegate {
         marker?.title = placeMark.title
         marker?.map = mapView
         
-        let camera = GMSCameraPosition.camera(withTarget: placeMark.coordinate, zoom: zoomLevel)
-        mapView.camera = camera
+        moveCameraToLocation(location: placeMark.coordinate)
     }
 }

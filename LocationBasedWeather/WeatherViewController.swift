@@ -43,6 +43,7 @@ class WeatherViewController: UIViewController {
     private let dailyWeatherCellIdentifier = "DailyWeatherTableViewCell"
     private let summaryWeatherCellIdentifier = "SummaryWeatherTableViewCell"
     private let weatherDataCellIdentifier = "WeatherDataTableViewCell"
+    private let collectionviewScrolling = false
     
     private var coordinates: CLLocationCoordinate2D!
     var placemark: MKPlacemark!
@@ -110,7 +111,6 @@ class WeatherViewController: UIViewController {
 //MARK:- UICollectionView Delegate Methods
 
 extension WeatherViewController: UICollectionViewDelegate {
-    
 }
 
 //MARK:- UICollectionView Data Source Methods
@@ -137,9 +137,11 @@ extension WeatherViewController: UICollectionViewDataSource {
 
 extension WeatherViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let hidden = scrollView.contentOffset.y != scrollView.contentInset.top
-        currentTemperatureLabel.isHidden = hidden
-        todayDateLabel.isHidden = hidden
+        if scrollView.frame.maxY == dailyWeatherTableView.frame.maxY {
+            let hidden = scrollView.contentOffset.y != scrollView.contentInset.top
+            currentTemperatureLabel.isHidden = hidden
+            todayDateLabel.isHidden = hidden
+        }
     }
 }
 

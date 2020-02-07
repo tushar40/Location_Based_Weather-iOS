@@ -21,7 +21,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ex1-Sw-1a4"/>
                     <connections>
-                        <segue destination="W3a-AY-qkB" kind="presentation" identifier="LocationWeatherSegue" id="1pM-RP-JT0"/>
+                        <segue destination="W3a-AY-qkB" kind="show" identifier="LocationWeatherSegue" id="1pM-RP-JT0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -33,14 +33,14 @@
             <objects>
                 <viewController id="W3a-AY-qkB" customClass="WeatherViewController" customModule="LocationBasedWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J8z-IV-eK0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather-background" translatesAutoresizingMaskIntoConstraints="NO" id="dzA-gq-Ck0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FXD-AB-P0b">
-                                <rect key="frame" x="8" y="242.5" width="398" height="128"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FXD-AB-P0b">
+                                <rect key="frame" x="8" y="274.5" width="398" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Scq-Db-swl"/>
@@ -62,13 +62,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-OD-Lcr">
-                                <rect key="frame" x="8" y="378.5" width="398" height="421.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-OD-Lcr">
+                                <rect key="frame" x="0.0" y="410.5" width="414" height="451.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gEm-0Z-Jgw">
-                                <rect key="frame" x="8" y="64" width="398" height="162"/>
+                                <rect key="frame" x="8" y="96" width="398" height="162"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9c-D8-Bs1">
                                         <rect key="frame" x="170.5" y="0.0" width="57" height="29"/>
@@ -102,13 +102,13 @@
                             <constraint firstItem="4m9-d3-xLU" firstAttribute="trailing" secondItem="FXD-AB-P0b" secondAttribute="trailing" constant="8" id="0Dg-oS-lBP"/>
                             <constraint firstItem="dzA-gq-Ck0" firstAttribute="top" secondItem="J8z-IV-eK0" secondAttribute="top" id="5Rv-md-bQE"/>
                             <constraint firstItem="FXD-AB-P0b" firstAttribute="top" secondItem="gEm-0Z-Jgw" secondAttribute="bottom" constant="16.5" id="DSz-PO-bmx"/>
-                            <constraint firstItem="hV0-OD-Lcr" firstAttribute="leading" secondItem="4m9-d3-xLU" secondAttribute="leading" constant="8" id="VDi-w7-y8s"/>
-                            <constraint firstAttribute="top" secondItem="gEm-0Z-Jgw" secondAttribute="top" constant="-64" id="VyX-v3-I17"/>
+                            <constraint firstItem="hV0-OD-Lcr" firstAttribute="leading" secondItem="4m9-d3-xLU" secondAttribute="leading" id="VDi-w7-y8s"/>
+                            <constraint firstAttribute="top" secondItem="gEm-0Z-Jgw" secondAttribute="top" constant="-96" id="VyX-v3-I17"/>
                             <constraint firstItem="gEm-0Z-Jgw" firstAttribute="leading" secondItem="4m9-d3-xLU" secondAttribute="leading" constant="8" id="WPz-CS-Pe7"/>
                             <constraint firstItem="dzA-gq-Ck0" firstAttribute="bottom" secondItem="J8z-IV-eK0" secondAttribute="bottom" id="Wb0-0S-pJR"/>
-                            <constraint firstItem="4m9-d3-xLU" firstAttribute="bottom" secondItem="hV0-OD-Lcr" secondAttribute="bottom" constant="8" id="d3Z-ve-zrQ"/>
+                            <constraint firstItem="4m9-d3-xLU" firstAttribute="bottom" secondItem="hV0-OD-Lcr" secondAttribute="bottom" id="d3Z-ve-zrQ"/>
                             <constraint firstItem="4m9-d3-xLU" firstAttribute="trailing" secondItem="gEm-0Z-Jgw" secondAttribute="trailing" constant="8" id="eUC-ux-ehJ"/>
-                            <constraint firstItem="4m9-d3-xLU" firstAttribute="trailing" secondItem="hV0-OD-Lcr" secondAttribute="trailing" constant="8" id="fVM-Cq-ANE"/>
+                            <constraint firstItem="4m9-d3-xLU" firstAttribute="trailing" secondItem="hV0-OD-Lcr" secondAttribute="trailing" id="fVM-Cq-ANE"/>
                             <constraint firstItem="dzA-gq-Ck0" firstAttribute="trailing" secondItem="J8z-IV-eK0" secondAttribute="trailing" id="ggR-tC-vLg"/>
                             <constraint firstItem="gEm-0Z-Jgw" firstAttribute="centerX" secondItem="J8z-IV-eK0" secondAttribute="centerX" id="niV-cz-dbJ"/>
                             <constraint firstItem="hV0-OD-Lcr" firstAttribute="top" secondItem="FXD-AB-P0b" secondAttribute="bottom" constant="8" id="nxz-2h-nQF"/>
