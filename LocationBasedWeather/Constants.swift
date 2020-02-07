@@ -10,7 +10,8 @@ import Foundation
 import GoogleMaps
 
 struct Constants {
-    static let apiKey = "AIzaSyA7seHCuO9E9nfLeI_BPiLItPTOLrZNbvc"
+    static let PlacesApiKey = "AIzaSyA7seHCuO9E9nfLeI_BPiLItPTOLrZNbvc"
+    static let WeatherApiKey = "701b5db787e5ab9a0b34814d23af044f"
     static let distanceFilter = 1.0
     static let zoomLevel: Float = 18.0
     

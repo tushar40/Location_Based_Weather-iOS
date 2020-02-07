@@ -15,12 +15,10 @@ let notificationCenter = NotificationCenter.default
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey(Constants.apiKey)
-        GMSPlacesClient.provideAPIKey(Constants.apiKey)
+        GMSServices.provideAPIKey(Constants.PlacesApiKey)
+        GMSPlacesClient.provideAPIKey(Constants.PlacesApiKey)
         return true
     }
 
